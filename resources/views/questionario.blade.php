@@ -20,7 +20,9 @@
         @foreach ($errors->all() as $error)<li>{{ $error }}</li>@endforeach
         </ul></div>
     @endif
-    <form method="POST" action="{{ route('questionario.store') }}">
+    <noscript><p>Responda a todas as perguntas e clique em salvar. O contador de progresso requer JavaScript.</p></noscript>
+    <div><label for="progresso-questionario">Seu progresso</label><progress id="progresso-questionario" max="{{ count($perguntas) }}" value="0" style="width:100%"></progress><p id="texto-progresso" role="status" aria-live="polite"></p><small>Suas respostas são gravadas quando você clica em salvar.</small></div>
+    <form method="POST" action="{{ route('questionario.store') }}" data-questionario>
         @csrf
         @foreach ($perguntas as $campo => $pergunta)
         <fieldset>
@@ -38,5 +40,6 @@
         <button type="submit">Salvar respostas e concluir</button>
     </form>
 </main>
+<script src="{{ asset('js/questionario.js') }}" defer></script>
 </body>
 </html>

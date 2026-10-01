@@ -5,6 +5,7 @@ use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\QuestionarioController;
 use App\Http\Controllers\InicioController;
+use App\Http\Controllers\PerfilController;
 
 Route::get('/', function () {
     return redirect()->route(auth()->check() ? 'inicio' : 'login');
@@ -25,3 +26,9 @@ Route::post('/questionario', [QuestionarioController::class, 'store'])->middlewa
 Route::get('/questionario/conclusao', [QuestionarioController::class, 'conclusao'])->middleware('auth')->name('questionario.conclusao');
 
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/minha-conta', [PerfilController::class, 'edit'])->name('perfil.edit');
+    Route::patch('/minha-conta', [PerfilController::class, 'update'])->middleware('throttle:6,1')->name('perfil.update');
+    Route::put('/minha-conta/senha', [PerfilController::class, 'password'])->middleware('throttle:6,1')->name('perfil.password');
+});

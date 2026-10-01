@@ -10,7 +10,7 @@
 <header class="topbar"><a class="brand" href="{{ route('inicio') }}">Jovify<span>Conectando jovens ao futuro</span></a>
 <nav aria-label="Menu principal">
 @auth
-<a href="{{ route('inicio') }}">Início</a><a href="{{ route('questionario') }}">Questionário</a>
+<a href="{{ route('inicio') }}">Início</a><a href="{{ route('questionario') }}">Questionário</a><a href="{{ route('perfil.edit') }}">Minha conta</a>
 <form method="POST" action="{{ route('logout') }}">@csrf<button class="secondary">Sair</button></form>
 @else
 <a href="{{ route('login') }}">Entrar</a><a href="{{ route('signup.form') }}">Criar conta</a>

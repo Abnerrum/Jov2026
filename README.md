@@ -39,3 +39,7 @@ Execute `php artisan test` após instalar as dependências e gerar a chave. Há 
 ## Melhorias recentes
 
 A aplicação agora inclui uma área inicial com status do questionário, formulários responsivos com CSS local, normalização de CPF/e-mail, senhas novas com mínimo de oito caracteres e limite de tentativas de login. Veja [os detalhes e comandos de atualização](docs/MELHORIAS.md).
+
+## Minha conta e progresso
+
+A tela Minha conta permite editar nome/e-mail e trocar a senha mediante confirmação da senha atual. O questionário mostra um contador de perguntas preenchidas. Confira [o funcionamento e a verificação](docs/PERFIL-E-PROGRESSO.md).
