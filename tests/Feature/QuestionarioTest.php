@@ -73,7 +73,7 @@ class QuestionarioTest extends TestCase
     {
         $usuario = $this->usuario();
         $this->post('/login', ['email' => $usuario->email, 'password' => 'senha1234'])
-            ->assertRedirect(route('questionario'));
+            ->assertRedirect(route('inicio'));
         $this->assertAuthenticatedAs($usuario);
         $this->post('/logout')->assertRedirect(route('login'));
         $this->assertGuest();

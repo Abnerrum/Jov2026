@@ -1,50 +1,10 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login - Jovify</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"
-    />
-    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
-  </head>
-  <body class="index">
-    <div class="container">
-      <div class="logo">Jovify</div>
-      <div class="slogan">Conectando jovens ao futuro!</div>
-      <form class="form" action="{{ route('login.post') }}" method="POST">
-        @csrf
-        @if (session('success'))
-                        <div class="alert alert-success">
-                            {{ session('success') }}
-                        </div>
-                    @endif
-                    @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
-        <input type="text" name="email" placeholder="E-mail" required/>
-        <input type="password" name="password" placeholder="Senha" required />
-        <div class="row mt-3 mb-2">
-            <div class="col-12 d-flex justify-content-between">
-                <div class="col-6"><button type="submit" class="btn">Entrar</button>
-                </div>
-                <div class="col-6"><a href="/cadastro" class="btn my-auto">Cadastrar</a></div>
-            </div>
-        </div>
-        <a href="#" class="forgot-password">Esqueci minha senha</a>
-      </form>
-    </div>
-  </body>
-</html>
+@extends('layouts.app')
+@section('title', 'Entrar — Jovify')
+@section('content')
+<section class="auth-card"><span class="eyebrow">Bem-vindo de volta</span><h1>Continue sua jornada</h1><p>Entre na sua conta para responder e revisar seu questionário.</p>
+<form method="POST" action="{{ route('login.post') }}" class="stack">@csrf
+<label for="email">E-mail</label><input id="email" type="email" name="email" value="{{ old('email') }}" autocomplete="email" maxlength="100" required>
+<label for="password">Senha</label><input id="password" type="password" name="password" autocomplete="current-password" required>
+<button type="submit">Entrar</button></form>
+<p>Ainda não tem conta? <a href="{{ route('signup.form') }}">Cadastre-se</a>.</p></section>
+@endsection

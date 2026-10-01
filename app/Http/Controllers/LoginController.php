@@ -15,6 +15,7 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
+        $request->merge(['email' => strtolower(trim((string) $request->input('email')))]);
         $request->validate([
             'email' => 'required|email',
             'password' => 'required'
@@ -36,7 +37,7 @@ class LoginController extends Controller
             $request->session()->put('token', $token);
     
      
-            return redirect()->route('questionario');
+            return redirect()->intended(route('inicio'));
         }
     
         return back()

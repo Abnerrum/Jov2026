@@ -19,17 +19,30 @@ class UsuarioController extends Controller
     public function register(Request $request)
     {
 
+        $request->merge([
+            'cpf' => preg_replace('/[.\-\s]/', '', (string) $request->input('cpf')),
+            'email' => strtolower(trim((string) $request->input('email'))),
+            'nomeCompleto' => trim((string) $request->input('nomeCompleto')),
+        ]);
+
         $validator = Validator::make($request->all(), [
             'nomeCompleto' => 'required|string|max:100',
-            'cpf' => 'required|string|max:11|unique:usuarios,cpf',
+            'cpf' => 'required|digits:11|unique:usuarios,cpf',
             'email' => 'required|email|max:100|unique:usuarios,email',
-            'password' => 'required|confirmed|min:4',
+            'password' => 'required|string|confirmed|min:8',
+        ], [
+            'cpf.digits' => 'Digite os 11 números do CPF.',
+            'cpf.unique' => 'Este CPF já está cadastrado.',
+            'email.unique' => 'Este e-mail já está cadastrado.',
+            'email.email' => 'Digite um e-mail válido.',
+            'password.min' => 'A senha deve ter pelo menos 8 caracteres.',
+            'password.confirmed' => 'A confirmação da senha não confere.',
         ]);
 
         if ($validator->fails()) {
             return redirect()->back()
                              ->withErrors($validator)
-                             ->withInput();
+                             ->withInput($request->except('password', 'password_confirmation'));
         }
 
         Usuario::create([

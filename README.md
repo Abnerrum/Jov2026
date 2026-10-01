@@ -35,3 +35,7 @@ A aplicação atualizada está na raiz. As cópias dentro de `referencias/` serv
 ### Testes
 
 Execute `php artisan test` após instalar as dependências e gerar a chave. Há testes de autenticação, validação, gravação, atualização e isolamento de respostas entre usuários. Eles ainda não foram executados no ambiente de preparação, que não possui PHP/Composer.
+
+## Melhorias recentes
+
+A aplicação agora inclui uma área inicial com status do questionário, formulários responsivos com CSS local, normalização de CPF/e-mail, senhas novas com mínimo de oito caracteres e limite de tentativas de login. Veja [os detalhes e comandos de atualização](docs/MELHORIAS.md).

@@ -4,9 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\QuestionarioController;
+use App\Http\Controllers\InicioController;
 
 Route::get('/', function () {
-    return redirect()->route('login');
+    return redirect()->route(auth()->check() ? 'inicio' : 'login');
 });
 
 
@@ -14,7 +15,9 @@ Route::get('/cadastro', [UsuarioController::class, 'showForm'])->name('signup.fo
 Route::post('/signup', [UsuarioController::class, 'register'])->name('signup.register');
 
 Route::get('/login', [LoginController::class, 'showForm'])->name('login');
-Route::post('/login', [LoginController::class, 'login'])->name('login.post');
+Route::post('/login', [LoginController::class, 'login'])->middleware('throttle:6,1')->name('login.post');
+
+Route::get('/inicio', [InicioController::class, 'index'])->middleware('auth')->name('inicio');
 
 Route::get('/questionario', [QuestionarioController::class, 'index'])->name('questionario')->middleware('auth');
 

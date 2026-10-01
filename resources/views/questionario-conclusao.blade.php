@@ -8,7 +8,7 @@
 </head>
 <body>
 <main class="container">
-    <header><span class="logo">Jovify</span><form method="POST" action="{{ route('logout') }}">@csrf<button class="secondary">Sair</button></form></header>
+    <header><a href="{{ route('inicio') }}">Início</a><span class="logo">Jovify</span><form method="POST" action="{{ route('logout') }}">@csrf<button class="secondary">Sair</button></form></header>
     <h1>Questionário concluído!</h1>
     <p>{{ auth()->user()->nomeCompleto }}, suas respostas foram salvas.</p>
     <p>Último envio: {{ $resposta->updated_at->timezone('America/Sao_Paulo')->format('d/m/Y H:i') }}.</p>

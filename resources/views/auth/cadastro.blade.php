@@ -1,74 +1,13 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cadastro de Usuário - Jovify</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" />
-    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
-</head>
-<body class="cadastro">
-    <div class="container w-auto py-auto my-auto">
-        <div class="row d-flex justify-content-center">
-            <div class="col-12">
-                <h2 class="py-auto text-center logo">Cadastro de Usuário</h2>
-                <form id="signupForm" action="{{ route('signup.register') }}" method="POST" class="needs-validation p-2 form" novalidate>
-                    @csrf
-                    @if (session('success'))
-                        <div class="alert alert-success">
-                            {{ session('success') }}
-                        </div>
-                    @endif
-                    @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
-                    
-                    <div class="form-row">
-                        <div class="form-group col-md-6 required">
-                          <input type="text" class="form-control" id="fullName" name="nomeCompleto" value="{{ old('nomeCompleto') }}" required placeholder="Nome Completo"/>
-                        </div>
-                        <div class="form-group col-md-6 required">
-                            <input type="text" class="form-control" id="cpf" name="cpf" value="{{ old('cpf') }}" required placeholder="CPF"/>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group required">
-                        <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}" required placeholder="E-mail"/>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group col-md-6 required">
-                            <input type="password" class="form-control" id="password" name="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}" placeholder="Senha"/>
-                        </div>
-                        <div class="form-group col-md-6 required">
-                            <input type="password" class="form-control" id="confirmPassword" name="password_confirmation" placeholder="Confirmar Senha"/>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input m-1" type="checkbox" id="termsCheck" required/>
-                            <label class="form-check-label text-nowrap" for="termsCheck">
-                                Concordo com os <a href="#">termos e condições</a>.
-                            </label>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-cadastrar">
-                            Cadastrar
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
+@extends('layouts.app')
+@section('title', 'Criar conta — Jovify')
+@section('content')
+<section class="auth-card"><span class="eyebrow">Comece por aqui</span><h1>Crie sua conta</h1><p>Preencha seus dados para começar a usar o Jovify.</p>
+<form method="POST" action="{{ route('signup.register') }}" class="stack">@csrf
+<label for="nome">Nome completo</label><input id="nome" name="nomeCompleto" value="{{ old('nomeCompleto') }}" autocomplete="name" maxlength="100" required>
+<label for="cpf">CPF</label><input id="cpf" name="cpf" value="{{ old('cpf') }}" inputmode="numeric" maxlength="14" placeholder="000.000.000-00" aria-describedby="cpf-ajuda" required><small id="cpf-ajuda">Digite os 11 números, com ou sem pontuação.</small>
+<label for="email">E-mail</label><input id="email" type="email" name="email" value="{{ old('email') }}" autocomplete="email" maxlength="100" required>
+<label for="password">Senha</label><input id="password" type="password" name="password" autocomplete="new-password" minlength="8" aria-describedby="senha-ajuda" required><small id="senha-ajuda">Use pelo menos 8 caracteres.</small>
+<label for="confirmation">Confirme a senha</label><input id="confirmation" type="password" name="password_confirmation" autocomplete="new-password" minlength="8" required>
+<button type="submit">Criar conta</button></form>
+<p>Já tem conta? <a href="{{ route('login') }}">Entrar</a>.</p></section>
+@endsection

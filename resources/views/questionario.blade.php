@@ -8,7 +8,7 @@
 </head>
 <body>
 <main class="container">
-    <header><a href="{{ route('questionario') }}" class="logo">Jovify</a>
+    <header><a href="{{ route('inicio') }}">Início</a><a href="{{ route('questionario') }}" class="logo">Jovify</a>
         <form method="POST" action="{{ route('logout') }}">@csrf<button class="secondary">Sair</button></form>
     </header>
     <h1>Conte um pouco sobre você</h1>
