@@ -1,0 +1,94 @@
+/* Reseta margens e paddings padrão */
+* {
+    margin: 0; /* Corrige a margem inicial */
+    padding: 0; /* Corrige o padding inicial */
+    box-sizing: border-box;
+}
+
+/* Estilo geral do body */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #00FF00;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Container principal */
+.container {
+    display: flex;
+    width: 100%;
+    flex-grow: 1;
+}
+
+/* Menu lateral */
+.menu-lateral {
+    background-color: #1f1f1f;
+    width: 250px;
+    padding: 10px;
+    border: 2px solid #00FF00; /* Borda verde ao redor do menu lateral */
+}
+
+/* Estilo do título do menu lateral */
+.menu-lateral h5 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #00FF00;
+    text-align: center;
+}
+
+/* Itens do menu */
+.menu-lateral a {
+    color: #00FF00;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    transition: color 0.3s;
+}
+
+.menu-lateral a:hover {
+    color: #0aff00;
+}
+
+/* Estilo para a linha de separação */
+.menu-lateral hr {
+    border: 1px solid #00FF00; /* Cor da linha de separação */
+    margin: 10px 0; /* Espaçamento acima e abaixo da linha */
+}
+
+/* Área central */
+.conteudo-central {
+    flex-grow: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Alinha horizontalmente no centro */
+    justify-content: flex-start; /* Alinha o conteúdo para o topo */
+    border: 2px solid #00FF00; /* Borda verde ao redor da área central */
+}
+
+/* Estilo do título na área central */
+.conteudo-central h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    text-align: center; /* Centraliza o texto do título */
+}
+
+/* Estilo da seta */
+.conteudo-central .seta {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: center; /* Centraliza o texto da seta */
+}
+
+/* Rodapé */
+.rodape {
+    text-align: center;
+    padding: 10px;
+    background-color: #1f1f1f;
+    color: #00FF00;
+    border-top: 2px solid #00FF00; /* Borda verde no topo do rodapé */
+}
