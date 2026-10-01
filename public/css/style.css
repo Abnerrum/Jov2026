@@ -1,0 +1,238 @@
+/**Body-Formatação**/
+* {
+    padding: 0px;
+    margin:0px;
+}
+.questionario {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #121212;
+    color: #ffffff;
+}
+.cadastro {
+    background-color: #000;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    width:100%;
+    align-items: center;
+  }
+
+.index{
+    background-color: #000;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+/**--------------**/
+
+  .hidden {
+    display: none;
+  }
+  .form-group label {
+    font-weight: bold;
+  }
+  .form-group.required label::after {
+    content: "*";
+    color: #cd1717;
+    margin-left: 5px;
+  }
+  .invalid-feedback {
+    display: none;
+    font-size: 14px;
+    color: #dc3545;
+  }
+  .valid-feedback {
+    display: none;
+    font-size: 14px;
+    color: #28a745;
+  }
+/**Botões**/
+.btn-cadastrar {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  .btn-cadastrar:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+/**--------------**/
+
+  .progress {
+    height: 10px;
+    margin-bottom: 20px;
+  }
+  .progress-bar {
+    transition: width 0.6s ease;
+  }
+
+.index .container, .cadastro .row, .questionario .container form {
+    background: #1e1e1e;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    max-width: 600px;
+    width: 100%;
+    color:#FFF;
+}
+.questionario .container{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+.question {
+    margin-bottom: 30px;
+    font-size:0.3em;
+}
+.question h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+/**Inputs**/
+.options {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:5%;
+}
+.options label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+.options input[type="radio"] {
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #39ff14;
+    border-radius: 50%;
+    margin-bottom: 5px;
+    transition: background 0.3s ease;
+    cursor: pointer;
+}
+.options input[type="radio"]:checked {
+    background: #39ff14;
+}
+.options span {
+    color: #ffffff;
+    margin-top: 5px;
+}
+.options .direction-left {
+    color: #999999;
+    font-size: 12px;
+    text-align: left;
+    margin-top: 5px;
+    flex: 1;
+}
+.options .direction-right {
+    color: #999999;
+    font-size: 12px;
+    text-align: right;
+    margin-top: 5px;
+    flex: 1;
+}
+
+/**--------------**/
+.submit-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #39ff14;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 20px;
+}
+.submit-button:hover {
+    background-color: #2ecc71;
+}
+
+.index .container {
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+}
+.logo {
+    font-size: 2em;
+    color: #39ff14;
+    margin-bottom: 10px;
+}
+.slogan {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color:rgb(152, 152, 152);
+}
+.form {
+    margin-bottom: 20px;
+}
+.form input {
+    padding: 12px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    font-size: 1em;
+}
+
+.form select, .form select option, .form select:enabled, .form select:hover, .form input[type="date"]{
+    background-color: #333; 
+    color: #a5a4a4;
+    border: 0px;
+}
+.form .btn {
+    padding: 12px;
+    background-color: #39ff14;
+    border: none;
+    border-radius: 5px;
+    color: #000;
+    cursor: pointer;
+    font-size: 1em;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    display: block;
+}
+
+.form .btn:hover{
+    background-color: #1b6c19;
+    color:#FFF;
+}
+
+.form a:hover{
+    text-decoration: none;
+    color:#1b6c19;
+}
+.forgot-password {
+    margin-top: 10px;
+    font-size: 0.8em;
+    color: #39ff14;
+    text-decoration: none;
+    display: inline-block;
+}
+
+div.progress{
+    background-color: #4f4f4f;
+}
+
+.form label{
+    color:#c2c2c2;
+}

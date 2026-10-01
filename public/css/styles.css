@@ -1,0 +1,201 @@
+body {
+    background-color: black;
+    color: lime;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.menu a {
+    color: lime;
+    text-decoration: none;
+}
+
+nav {
+    margin-top: 20px;
+}
+
+nav a {
+    color: lime;
+    text-decoration: underline;
+}
+body {
+    background-color: black;
+    color: #00FF00; /* Cor verde similar à da imagem */
+    font-family: 'Courier New', Courier, monospace; /* Fonte estilo terminal */
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+.link {
+    color: #00FF00;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: none;
+}
+
+.icon {
+    font-size: 2em;
+    color: #00FF00;
+}
+
+body {
+    background-color: black;
+    color: #00FF00; /* Cor verde similar à da imagem */
+    font-family: 'Courier New', Courier, monospace; /* Fonte estilo terminal */
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+.link {
+    color: #00FF00;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.logo {
+    width: 80px; /* Defina o tamanho da imagem */
+    margin-bottom: 20px; /* Espaçamento abaixo da imagem */
+}
+body {
+    background-color: black;
+    color: #00FF00; /* Cor verde similar à da imagem */
+    font-family: 'Courier New', Courier, monospace; /* Fonte estilo terminal */
+}
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-transform: uppercase; /* Força o texto a ser maiúsculo */
+}
+
+p {
+    font-size: 1.2em;
+}
+
+.link {
+    color: #00FF00;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.logo {
+    width: 80px; /* Defina o tamanho da imagem */
+    margin-bottom: 20px; /* Espaçamento abaixo da imagem */
+}
+
+body {
+    background-color: black;
+    color: #00FF00; /* Cor verde */
+    font-family: 'Courier New', Courier, monospace; /* Fonte estilo terminal */
+    text-align: center; /* Centraliza todo o conteúdo */
+}
+
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-transform: uppercase; /* Força o texto a ser maiúsculo */
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 1.5em;
+    margin-bottom: 15px;
+}
+
+.link {
+    color: #00FF00;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.logo {
+    width: 80px; /* Tamanho da imagem */
+    margin-bottom: 20px; /* Espaçamento abaixo da imagem */
+}
+body {
+    background-color: black;
+    color: #00FF00;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.palavras-quebradas {
+    font-size: 1.2em;
+    line-height: 2em;
+    margin-bottom: 15px;
+    text-align: left;
+}
+.logo {
+    width: 80px;
+    margin-bottom: 20px;
+}
+
+.destaque {
+    font-size: 1.8em; /* Aumenta o tamanho da fonte */
+    font-weight: bold; /* Negrito */
+    color: #FFD700; /* Cor dourada para destacar */
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px #FF0000; /* Efeito de sombra para destacar ainda mais */
+}
+
+.bg-black{
+    background-color: #000;
+}
+
+.btn-outline-success{
+    border-color:#00ff00;
+}
+
+.btn-outline-success:hover{
+    border-color:#00ff00;
+    background: #0f0;
+    color:#000
+}
+
+.link {
+    color: #00ff00;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.container{
+    border: 2px solid #00FF00;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    background-color: #000;
+    font-family: "Courier New";
+}
